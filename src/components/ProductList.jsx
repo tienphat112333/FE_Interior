@@ -8,7 +8,7 @@ export function ProductList() {
 
   useEffect(() => {
     // Gọi API backend để lấy danh sách sản phẩm
-    axios.get("http://localhost:5000/api/products") // ✅ sửa URL nếu backend khác port
+    axios.get("https://interior-api-h7g8.onrender.com/api/products") // 
       .then((response) => {
         setItems(response.data);
         setIsLoading(false);
@@ -26,7 +26,7 @@ export function ProductList() {
         {items.map((item) => (
           <div key={item._id} className="bg-white shadow-lg rounded-2xl overflow-hidden">
             <img
-              src={`http://localhost:5000/${item.image}`} // hiển thị hình ảnh từ server
+              src={`https://interior-api-h7g8.onrender.com/${item.image}`} // hiển thị hình ảnh từ server
               alt={item.name}
               className="w-full h-[400px] object-cover object-center rounded-xl"
             />

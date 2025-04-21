@@ -12,7 +12,7 @@ export function UpdatePage() {
   useEffect(() => {
     const fetchAllProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/products');
+        const response = await axios.get('https://interior-api-h7g8.onrender.com/api/products');
         setItems(response.data);
       } catch (err) {
         console.error("Lỗi khi lấy dữ liệu:", err);
@@ -29,7 +29,7 @@ export function UpdatePage() {
 
   const confirmDelete = async () => {
     try {
-      const response = await axios.delete(`http://localhost:5000/api/products/${selectedProduct}`);
+      const response = await axios.delete(`https://interior-api-h7g8.onrender.com/api/products/${selectedProduct}`);
       
       if (response.data.success) {
         setItems(prevItems => prevItems.filter(item => item._id !== selectedProduct));
@@ -66,18 +66,6 @@ export function UpdatePage() {
       [name]: value,
     }));
   };
-
-  // const handleImageChange = (e) => {
-  //   const file = e.target.files[0];
-  //   if (file) {
-  //     const fileURL = URL.createObjectURL(file);
-  //     setImagePreview(fileURL); // Cập nhật preview ảnh
-  //     setEditedProduct((prev) => ({
-  //       ...prev,
-  //       imageFile: file, // Lưu tệp hình ảnh
-  //     }));
-  //   }
-  // };
 
   const handleSaveEdit = async () => {
     const formData = new FormData();
@@ -123,7 +111,7 @@ export function UpdatePage() {
         {items.map((item) => (
           <div key={item.id} className="bg-white shadow-lg rounded-2xl overflow-hidden">
             <img
-              src={`http://localhost:5000/${item.image}`}
+              src={`https://interior-api-h7g8.onrender.com/${item.image}`}
               alt={item.name}
               className="w-full h-[400px] object-cover"
             />

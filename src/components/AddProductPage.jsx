@@ -36,7 +36,7 @@ function AddProductPage() {
   useEffect(() => {
     const generateId = async () => {
       try {
-        const response = await axios.post("http://localhost:5000/api/products/generate-id", {
+        const response = await axios.post("https://interior-api-h7g8.onrender.com/api/products/generate-id", {
           category
         });
         setProductId(response.data.id);
@@ -63,7 +63,7 @@ function AddProductPage() {
     formData.append("id", productId);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/products", formData, {
+      const response = await axios.post("https://interior-api-h7g8.onrender.com/api/products", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

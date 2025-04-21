@@ -26,7 +26,7 @@ function SearchPage() {
       return;
     }
     try {
-      const response = await axios.get("http://localhost:5000/api/products/search", {
+      const response = await axios.get("https://interior-api-h7g8.onrender.com/api/products/search", {
         params: filters,
       });
       if (response.data.length === 0) {
@@ -112,7 +112,7 @@ function SearchPage() {
               >
                 {item.image && (
                   <img
-                    src={`http://localhost:5000/${item.image}`}
+                    src={`https://interior-api-h7g8.onrender.com/${item.image}`}
                     alt={item.name}
                     className="w-24 h-24 object-cover rounded"
                   />

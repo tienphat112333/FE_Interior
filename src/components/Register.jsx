@@ -28,7 +28,7 @@ const Register = () => {
       return;
     }
     try {
-      await axios.post('http://localhost:5000/api/auth/register', { email, password });
+      await axios.post('https://interior-api-h7g8.onrender.com/api/auth/register', { email, password });
       alert("Đăng ký thành công!");
       navigate('/login');
     } catch (err) {
