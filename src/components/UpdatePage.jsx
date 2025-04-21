@@ -81,7 +81,7 @@ export function UpdatePage() {
   
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/products/${editedProduct._id}`,
+        `https://interior-api-h7g8.onrender.com/api/products/api/products/${editedProduct._id}`,
         formData,
         {
           headers: {
